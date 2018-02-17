@@ -45,6 +45,13 @@ class Mecha {
         this.sword.body.drag.set(1000);
         this.sword_active = false;
 
+        // new sword
+        // this.new_sword = game.add.sprite(10, 32, 'sword_long');
+        // this.new_sword.scale.y = 1.5;
+        // this.sword.visible = false;
+        // this.new_sword.anchor.setTo(0.5, 1);
+        // this.sprite.addChild(this.new_sword)
+
 
         // group bullets
         this.attack_group = game.add.group();
@@ -58,12 +65,12 @@ class Mecha {
 
         this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
 
-
+        //this.new_sword.rotation += 0.01;
 
         if(this.boost_count < 20) { this.boost_count++; }
 
         if(controls.fire)  { this.fire_bullet(); }
-        if(controls.sword) { this.sword_chop();  }
+        else if(controls.sword) { this.sword_chop();  }
     }
 
     render() {
@@ -72,23 +79,19 @@ class Mecha {
     }
 
     draw_flame_trail() {
-        // if(this.flame_counter < 2) { this.flame_counter ++ }
-        // else if (this.flame_counter == 2) {
-            var flame = this.flames.getFirstExists(false);
-            if(flame) {
-                flame.rotation = this.sprite.rotation - 30;
-                flame.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-                flame.alpha = 1;
-                flame.lifespan = 1000;
-                //game.add.tween(flame).to( { alpha: 0 }, duration, easetype, autostart, delay, repeat, yoyo);
-                game.add.tween(flame).to( { alpha: 0 }, 1000, Phaser.Easing.Exponential.Out, true, 0, 0, false);
-            }
-        //     this.flame_counter = 0;
-        // }
+        var flame = this.flames.getFirstExists(false);
+        if(flame) {
+            flame.rotation = this.sprite.rotation - 30;
+            flame.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
+            flame.alpha = 1;
+            flame.lifespan = 1000;
+            //game.add.tween(flame).to( { alpha: 0 }, duration, easetype, autostart, delay, repeat, yoyo);
+            game.add.tween(flame).to( { alpha: 0 }, 1000, Phaser.Easing.Exponential.Out, true, 0, 0, false);
+        }
     }
 
     sword_chop(){
-        if(!this.sword_active){
+        if(!this.sword_active) {
             this.sword_active = true;
             this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
             this.sword.visible = true;
@@ -96,10 +99,23 @@ class Mecha {
             this.sword.angle = this.sprite.angle + 90;
             game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
             this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
+            //this.new_sword.rotation = this.sprite.rotation;
+            // this.sword_active = true;
+            // this.new_sword.rotation = 0;
+            // this.new_sword.active = true;
+            // //this.new_sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
+            // this.new_sword.visible = true;
+            // this.new_sword.lifespan = 300;
+            // //this.new_sword.events.onKilled.add(function(){ this.new_sword.rotation = 0 }, this)
+            // //game.add.tween(this.new_sword).to( { rotation: 3 }, 300, Phaser.Easing.Exponential.Out, true, 0, 0, false);
+            // //this.sword.events.onKilled.add(function(){ console.log('killed it'); this.sword_active = false; }, this);
+            // game.time.events.add(Phaser.Timer.SECOND * 1, set_sword_active, this);
 
         }
     }
-
+    // set_sword_active() {
+    //     this.sword_active = false
+    // }
 
     fire_bullet() {
          if (game.time.now > this.bullet_time) {

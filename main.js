@@ -8,8 +8,9 @@ function preload() {
     game.load.image('flame', 'assets/flame.png');
     game.load.image('red', 'assets/red.png');
     game.load.image('blue', 'assets/blue.png');
+    game.load.image('sword_long', 'assets/sword_long.png');
 
-     //HACK TO PRELOAD A CUSTOM FONT
+    //HACK TO PRELOAD A CUSTOM FONT
     game.add.text(0, 0, "hack", {font:"1px prstart", fill:"#FFFFFF"});
 }
 
