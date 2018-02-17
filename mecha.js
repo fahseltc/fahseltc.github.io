@@ -28,7 +28,7 @@ class Mecha {
         this.bullets.enableBodyDebug = true;
         this.bullets.enableBody = true;
         this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-        this.bullets.createMultiple(40, 'bullet');
+        this.bullets.createMultiple(100, 'bullet');
         this.bullets.setAll('anchor.x', 0.5);
         this.bullets.setAll('anchor.y', 0.5);
         this.bullet_time = 0;
@@ -43,6 +43,7 @@ class Mecha {
         this.sword.physicsBodyType = Phaser.Physics.ARCADE;
         game.physics.enable(this.sword, Phaser.Physics.ARCADE);
         this.sword.body.drag.set(1000);
+        this.sword_active = false;
 
 
         // group bullets
@@ -52,7 +53,12 @@ class Mecha {
     }
 
     update() {
+        var distance = Phaser.Math.distance(game.input.activePointer.x, game.input.activePointer.y, this.sprite.x, this.sprite.y);
+        //console.log(distance);
+
         this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+
+
 
         if(this.boost_count < 20) { this.boost_count++; }
 
@@ -62,6 +68,7 @@ class Mecha {
 
     render() {
         this.draw_flame_trail();
+        //game.debug.spriteInfo(this.sprite, 32, 32);
     }
 
     draw_flame_trail() {
@@ -81,12 +88,18 @@ class Mecha {
     }
 
     sword_chop(){
-        this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-        this.sword.visible = true;
-        this.sword.lifespan = 200;
-        this.sword.angle = this.sprite.angle + 90;
-        game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
+        if(!this.sword_active){
+            this.sword_active = true;
+            this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
+            this.sword.visible = true;
+            this.sword.lifespan = 200;
+            this.sword.angle = this.sprite.angle + 90;
+            game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
+            this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
+
+        }
     }
+
 
     fire_bullet() {
          if (game.time.now > this.bullet_time) {
@@ -94,10 +107,10 @@ class Mecha {
 
             if (bullet) {
                 bullet.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-                bullet.lifespan = 2000;
+                bullet.lifespan = 1000;
                 //bullet.rotation = sprite.rotation;
-                game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 500, bullet.body.velocity);
-                this.bullet_time = game.time.now + 50;
+                game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1500, bullet.body.velocity);
+                this.bullet_time = game.time.now + 10;
             }
         }
     }
