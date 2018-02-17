@@ -96,8 +96,8 @@ class Mecha {
                 bullet.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
                 bullet.lifespan = 2000;
                 //bullet.rotation = sprite.rotation;
-                game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 100, bullet.body.velocity);
-                this.bullet_time = game.time.now + 100;
+                game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 500, bullet.body.velocity);
+                this.bullet_time = game.time.now + 50;
             }
         }
     }
