@@ -1,5 +1,7 @@
 class Mecha {
-    constructor(x, y) {
+    constructor(x, y, controls) {
+
+        this.controls = controls;
 
         // mecha setup
         this.sprite = game.add.sprite(x, y, 'mecha');
@@ -74,8 +76,8 @@ class Mecha {
 
         if(this.boost_count < 20) { this.boost_count++; }
 
-        if(controls.fire)  { this.fire_bullet(); }
-        else if(controls.sword) { this.sword_chop();  }
+        if(this.controls.fire)  { this.fire_bullet(); }
+        else if(this.controls.sword) { this.sword_chop();  }
     }
 
     render() {
@@ -114,7 +116,7 @@ class Mecha {
             //this.new_sword.events.onKilled.add(function(){ this.new_sword.rotation = 0 }, this)
             game.add.tween(this.new_sword).to( { rotation: 2.5 }, 400, Phaser.Easing.Exponential.Out, true, 0, 0, false);
             //this.sword.events.onKilled.add(function(){ console.log('killed it'); this.sword_active = false; }, this);
-            game.time.events.add(Phaser.Timer.SECOND * 0.5, this.set_sword_active, this);
+            game.time.events.add(Phaser.Timer.SECOND * 0.2, this.set_sword_active, this);
 
         }
     }

@@ -1,5 +1,6 @@
 class EnemyManager {
-    constructor() {
+    constructor(mecha) {
+        this.mecha = mecha;
         this.bad_guys = game.add.group();
 
         this.spawn = true;
@@ -24,12 +25,12 @@ class EnemyManager {
         if(bad_guy) {
             var temp_x = this.get_random_x();
             var temp_y = this.get_random_y();
-            var distance_to_player = Phaser.Math.distance(temp_x, temp_y, mecha.sprite.x, mecha.sprite.y);
+            var distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.mecha.sprite.x, this.mecha.sprite.y);
 
             while(distance_to_player < 150) {
                 temp_x = this.get_random_x();
                 temp_y = this.get_random_y();
-                distance_to_player = Phaser.Math.distance(temp_x, temp_y, mecha.sprite.x, mecha.sprite.y);
+                distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.mecha.sprite.x, this.mecha.sprite.y);
             }
 
             bad_guy.reset(temp_x, temp_y);
