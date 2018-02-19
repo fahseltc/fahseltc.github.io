@@ -1,11 +1,3 @@
-var game = new Phaser.Game(1200, 900, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, render: render });
-
-// game.state.add('menu', menu_state);
-// game.state.add('play', playState);
-
-// game.state.start('boot)');
-
-
 var play_state = {}
 
 function preload() {

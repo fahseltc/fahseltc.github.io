@@ -46,17 +46,22 @@ class Mecha {
         this.sword_active = false;
 
         // new sword
-        // this.new_sword = game.add.sprite(10, 32, 'sword_long');
-        // this.new_sword.scale.y = 1.5;
-        // this.sword.visible = false;
-        // this.new_sword.anchor.setTo(0.5, 1);
-        // this.sprite.addChild(this.new_sword)
+        this.new_sword = game.add.sprite(30, 32, 'sword_long');
+        this.new_sword.scale.y = 1.5;
+        this.sword.visible = false;
+        this.new_sword.anchor.setTo(0.5, 1);
+        this.sword.enableBody = true;
+        this.sword.physicsBodyType = Phaser.Physics.ARCADE;
+        game.physics.enable(this.new_sword, Phaser.Physics.ARCADE);
+        this.sprite.addChild(this.new_sword)
+        this.new_sword.x = 30;
+        this.new_sword.y = 23;
 
 
         // group bullets
         this.attack_group = game.add.group();
         this.attack_group.add(this.bullets);
-        this.attack_group.add(this.sword);
+        //this.attack_group.add(this.new_sword);
     }
 
     update() {
@@ -92,30 +97,33 @@ class Mecha {
 
     sword_chop(){
         if(!this.sword_active) {
-            this.sword_active = true;
-            this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-            this.sword.visible = true;
-            this.sword.lifespan = 200;
-            this.sword.angle = this.sprite.angle + 90;
-            game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
-            this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
-            //this.new_sword.rotation = this.sprite.rotation;
             // this.sword_active = true;
-            // this.new_sword.rotation = 0;
-            // this.new_sword.active = true;
-            // //this.new_sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-            // this.new_sword.visible = true;
-            // this.new_sword.lifespan = 300;
-            // //this.new_sword.events.onKilled.add(function(){ this.new_sword.rotation = 0 }, this)
-            // //game.add.tween(this.new_sword).to( { rotation: 3 }, 300, Phaser.Easing.Exponential.Out, true, 0, 0, false);
-            // //this.sword.events.onKilled.add(function(){ console.log('killed it'); this.sword_active = false; }, this);
-            // game.time.events.add(Phaser.Timer.SECOND * 1, set_sword_active, this);
+            // this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
+            // this.sword.visible = true;
+            // this.sword.lifespan = 200;
+            // this.sword.angle = this.sprite.angle + 90;
+            // game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
+            // this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
+            this.new_sword.rotation = this.sprite.rotation;
+            this.sword_active = true;
+            this.new_sword.rotation = 0.5;
+            this.new_sword.active = true;
+            //this.new_sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
+            this.new_sword.visible = true;
+            //this.new_sword.lifespan = 200;
+            //this.new_sword.events.onKilled.add(function(){ this.new_sword.rotation = 0 }, this)
+            game.add.tween(this.new_sword).to( { rotation: 2.5 }, 400, Phaser.Easing.Exponential.Out, true, 0, 0, false);
+            //this.sword.events.onKilled.add(function(){ console.log('killed it'); this.sword_active = false; }, this);
+            game.time.events.add(Phaser.Timer.SECOND * 0.5, this.set_sword_active, this);
 
         }
     }
-    // set_sword_active() {
-    //     this.sword_active = false
-    // }
+    set_sword_active() {
+        this.sword.alive = false;
+        this.sword_active = false
+        this.new_sword.visible = false;
+        this.new_sword.rotation = 0;
+    }
 
     fire_bullet() {
          if (game.time.now > this.bullet_time) {
@@ -130,4 +138,4 @@ class Mecha {
             }
         }
     }
-}
+};
