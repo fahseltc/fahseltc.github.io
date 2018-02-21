@@ -11,8 +11,9 @@ var play_state = {
         this.graphics = game.add.graphics(0, 0);
         this.mecha = new Mecha(400, 300, this.controls);
         this.score = new Score();
-        this.enemy_manager = new EnemyManager(this.mecha);
-
+        this.enemy_manager = new EnemyManager(game, this.mecha);
+        this.timer = new GameTimer(this.score);
+        this.timer.start();
         game.world.bringToTop(this.mecha.sprite);
     },
 
@@ -27,11 +28,14 @@ var play_state = {
     },
 
     render: function() {
-        //game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
+        this.timer.render();
         this.mecha.render();
     },
 
     handle_collision: function (obj, enemy) {
+         this.game.debug.body(obj);
+         this.game.debug.body(enemy);
+
         console.log("hit!");
         if((obj.key == 'bullet') && (enemy.key == 'red')) {
             enemy.kill();

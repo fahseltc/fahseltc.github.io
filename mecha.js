@@ -37,28 +37,36 @@ class Mecha {
 
 
         // sword setup
-        this.sword = game.add.sprite(100, 100, 'sword');
-        this.sword.scale.x = 2;
-        this.sword.visible = false;
-        this.sword.anchor.setTo(0.5, 0.5);
-        this.sword.enableBody = true;
-        this.sword.physicsBodyType = Phaser.Physics.ARCADE;
-        game.physics.enable(this.sword, Phaser.Physics.ARCADE);
-        this.sword.body.drag.set(1000);
-        this.sword_active = false;
+        // this.sword = game.add.sprite(100, 100, 'sword');
+        // this.sword.scale.x = 2;
+        // this.sword.visible = false;
+        // this.sword.anchor.setTo(0.5, 0.5);
+        // this.sword.enableBody = true;
+        // this.sword.physicsBodyType = Phaser.Physics.ARCADE;
+        // game.physics.enable(this.sword, Phaser.Physics.ARCADE);
+        // this.sword.body.drag.set(1000);
+        // this.sword_active = false;
 
         // new sword
         this.new_sword = game.add.sprite(30, 32, 'sword_long');
         this.new_sword.scale.y = 1.5;
-        this.sword.visible = false;
+        this.new_sword.visible = false;
         this.new_sword.anchor.setTo(0.5, 1);
-        this.sword.enableBody = true;
-        this.sword.physicsBodyType = Phaser.Physics.ARCADE;
+        this.new_sword.enableBody = true;
+        this.new_sword.physicsBodyType = Phaser.Physics.ARCADE;
         game.physics.enable(this.new_sword, Phaser.Physics.ARCADE);
         this.sprite.addChild(this.new_sword)
         this.new_sword.x = 30;
         this.new_sword.y = 23;
 
+        this.sword_hitbox = game.add.sprite(50,20);
+        this.sword_hitbox.width = 32;
+        this.sword_hitbox.height = 70;
+        this.sword_hitbox.anchor.setTo(0.5, 0.5);
+        this.sword_hitbox.enableBody = true;
+        this.sword_hitbox.physicsBodyType = Phaser.Physics.ARCADE;
+        game.physics.enable(this.sword_hitbox, Phaser.Physics.ARCADE);
+        this.sprite.addChild(this.sword_hitbox)
 
         // group bullets
         this.attack_group = game.add.group();
@@ -81,7 +89,11 @@ class Mecha {
     }
 
     render() {
-        this.draw_flame_trail();
+        //this.draw_flame_trail();
+        game.debug.spriteBounds(this.new_sword, "#ff69b4", false);
+        game.debug.spriteBounds(this.sword_hitbox, "#ff69b4", false);
+        //game.debug.spriteBounds(this.sprite, "##ff69b4", true);
+        //game.debug.body(new_sword, "##ff69b4", true);
         //game.debug.spriteInfo(this.sprite, 32, 32);
     }
 
@@ -107,7 +119,7 @@ class Mecha {
             // game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
             // this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
             this.new_sword.rotation = this.sprite.rotation;
-            this.sword_active = true;
+            //this.sword_active = true;
             this.new_sword.rotation = 0.5;
             this.new_sword.active = true;
             //this.new_sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
@@ -121,8 +133,8 @@ class Mecha {
         }
     }
     set_sword_active() {
-        this.sword.alive = false;
-        this.sword_active = false
+        //this.sword.alive = false;
+        //this.sword_active = false
         this.new_sword.visible = false;
         this.new_sword.rotation = 0;
     }

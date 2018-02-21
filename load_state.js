@@ -14,9 +14,12 @@ var load_state = {
         game.load.image('red', 'assets/red.png');
         game.load.image('blue', 'assets/blue.png');
         game.load.image('sword_long', 'assets/sword_long.png');
+        game.load.image('button', 'assets/button.png');
 
     },
     create: function() {
         game.state.start('menu');
+        //game.state.start('leaderboard');
+        //game.state.start('post');
     }
 };

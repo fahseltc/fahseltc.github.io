@@ -1,5 +1,6 @@
 class EnemyManager {
-    constructor(mecha) {
+    constructor(game, mecha) {
+        this.game = game;
         this.mecha = mecha;
         this.bad_guys = game.add.group();
 
@@ -18,6 +19,11 @@ class EnemyManager {
             this.spawn_bad_guy();
             this.spawn = false;
         }
+        this.bad_guys.forEach(this.debug_render, this, true)
+    }
+
+    debug_render(sprite) {
+        this.game.debug.body(sprite);
     }
 
     spawn_bad_guy() {
