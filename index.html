@@ -1,70 +1,129 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Charles Fahselt by fahseltc</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website about Charles Fahselt">
+    <meta name="author" content="Charles Fahselt">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Charles Fahselt</h1>
-        <p></p>
+    <title>Charles Fahselt</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63556957-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- image header -->
+        <div class="row">
+            <header class="header-image">
+                <div class="headline">
+                    <div class="container">
+                        <h1>Charles Fahselt</h1>
+                    </div>
+                </div>
+            </header>
+        <row>
+
+        <!-- about me section -->
+        <div class="row">
+            <div class="col-sm-12 ">
+                <div class="text-center" id="intro">
+                    <p>I write software!</p>
+                    <p>Most of the day I work with C++ and Ruby on Rails.</p>
+                    <p>And one day I plan to help build spaceships!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- articles sections -->
+        <div class="row">
+
+            <!-- first column of articles -->
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <img src="img/neural_icon.png" class="img-thumbnail">
+                    <div class="caption">
+                        <h3>Neural Networks</h3>
+                        <p>
+                            Node based neural network written in Java, ported from C++.
+                        </p>
+                        <p>
+                            <a href="https://github.com/fahseltc/NeuralNetwork" class="btn btn-default" role="button">Github</a>
+                            <!-- <a href="#" class="btn btn-default" role="button">More Info</a> -->
+                        </p>
+                    </div>
+                </div>
+
+                <div class="thumbnail">
+                    <img src="img/super_rl_dungeon.png" class="img-thumbnail">
+                    <div class="caption">
+                        <h3>Super RL Dungeon</h3>
+                        <p>
+                            Work-in-progress C++ Roguelike, written using libtcod. Featuring Perlin noise generated maps.
+                        </p>
+                        <p>
+                            <a href="https://github.com/fahseltc/Super-RL-Dungeon" class="btn btn-default" role="button">Github</a>
+                            <!-- <a href="#" class="btn btn-default" role="button">More Info</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END first column of articles -->
 
 
-        <p class="view"><a href="https://github.com/fahseltc">View My GitHub Profile</a></p>
+            <!-- second column of articles -->
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <img src="img/menu_icon.jpg" class="img-thumbnail">
+                    <div class="caption">
+                        <h3>Drone Control</h3>
+                        <p>
+                            My senior project at University of Houston Clear Lake, built with the help of <a href="https://github.com/fahseltc/Drone-Control#team-members">Team Flight.</a> It is a 3D quadcopter flight simulator and control platform, built in Java and Javascript with LibGDX and Node.js.
+                        </p>
+                        <p>
+                            <a href="https://github.com/fahseltc/Drone-Control" class="btn btn-default" role="button">Github</a>
+                            <!-- <a href="#" class="btn btn-default" role="button">More Info</a> -->
+                        </p>
+                    </div>
+                </div>
 
-      </header>
-      <section>
-        <h3>
-<a id="welcome-to-charles-page" class="anchor" href="#welcome-to-charles-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Charles' Page.</h3>
-
-<p>Hello, my name is Charles Fahselt, and I am a recent graduate from UHCL with a Bachelors in Computer Science. Here is my Github page, where I plan to showcase all of my projects and hobbies.</p>
-
-<h3>
-<a id="interests" class="anchor" href="#interests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interests</h3>
-
-<p>I love coding, especially in Java, but I am also familiar with many languages, including:</p>
-
-<ul>
-<li>HTML, CSS, Javascript, ASP.NET and C#</li>
-<li>C++, x86 Assembly</li>
-</ul>
-
-<h3>
-<a id="projects" class="anchor" href="#projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Projects</h3>
-
-<p>I have dabbled with many projects, but I have only polished a few well enough to be uploaded onto my GitHub.</p>
-
-<ul>
-<li>
-<a href="https://github.com/fahseltc/Drone-Control">Drone Control</a>. For my senior project at UHCL, I worked on a team to develop a Quad-copter Simulator and Controller.</li>
-<li>
-<a href="https://github.com/fahseltc/Pac-Dan">Pac-Dan</a>. In my free time, I worked on a Pac-Man clone using LibGDX</li>
-<li>
-<a href="https://github.com/fahseltc/NeuralNetwork">Neural Networks</a>. I have also worked on a project involving Neural Networks, which I find to be a very interesting topic.</li>
-</ul>
-
-<h3>
-<a id="heading" class="anchor" href="#heading" aria-hidden="true"><span class="octicon octicon-link"></span></a>heading</h3>
-
-<p>Paragraph</p>
-
-<h3>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h3>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+                 <div class="thumbnail">
+                    <img src="img/pacman_icon.png" class="img-thumbnail">
+                    <div class="caption">
+                        <h3>Pac-Dan</h3>
+                        <p>
+                            Java + LibGDX, true-to-original clone of the arcade classic, Pac-Man. 
+                        </p>
+                        <p>
+                            <a href="https://github.com/fahseltc/Pac-Dan" class="btn btn-default" role="button">Github</a>
+                            <!-- <a href="#" class="btn btn-default" role="button">More Info</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- second column of articles -->
+        </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>

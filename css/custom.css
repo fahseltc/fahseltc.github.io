@@ -1,0 +1,25 @@
+
+.thumbnail {
+    border: 1px solid black;
+    height: 190px;
+}
+
+.thumbnail img {
+    float: left;
+    height: 100px;
+    margin: 10px;
+}
+
+.caption h3 {
+    margin-top: 0px;
+}
+.caption p {
+    margin-top: -3px;
+}
+.article {
+    
+}
+
+#intro {
+    padding: 20px;
+}
