@@ -4,9 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d _site",
-    "build": "npx @11ty/eleventy && xcopy img _site\\img /i /Y",
+    "build": "npx @11ty/eleventy",
     "clean": "rd /s /q _site",
     "serve": "npx @11ty/eleventy --serve"
   },

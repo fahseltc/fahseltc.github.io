@@ -1,11 +1,21 @@
 ---
-layout: layout.html
+layout: base.html
 title: Projects
 subtitle: A collection of projects I have worked on
 permalink: projects.html
 ---
 {% for project in collections.project %}
-	<h3>{{ project.data.title }}</h3>
-	<img src="{{ project.data.image }}" width="100" height ="100" />
-	<p>{{ project.data.description }}</p>
+<div class="project-box">
+	<img style="padding: 20px; float: left;" src="{{ project.data.image }}" />
+	<div style="float: right;">
+		<h3>{{ project.data.title }}</h3>
+		<p>{{ project.data.description }}</p>
+		{% if project.data.has_article %}
+			<a href="/projects/{{ project.data.title | slug }}">Read More</a>
+		{% endif %}
+		{% if project.data.repo %}
+			<a style="float: right; padding-right: 2em;" href="{{ project.data.repo }}"><img src="img/github/logo.png" width="50" height="50"/></a>
+		{% endif %}
+	</div>
+</div>
 {% endfor %}
