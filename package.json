@@ -1,8 +1,8 @@
 {
-  "name": "webpage",
+  "name": "fahseltc.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": ".eleventy.js",
+  "main": "",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d _site",
@@ -12,14 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fahseltc/webpage.git"
+    "url": "git+https://github.com/fahseltc/fahseltc.github.io.git"
   },
   "author": "fahseltc",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fahseltc/webpage/issues"
-  },
-  "homepage": "https://github.com/fahseltc/webpage#readme",
+  "homepage": "https://github.com/fahseltc/fahseltc.github.io",
   "dependencies": {},
   "devDependencies": {
     "gh-pages": "^6.1.1"
