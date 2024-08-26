@@ -1,8 +1,23 @@
 .project-box {
     display: flex;
-    justify-content: space-around;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 5px;
-    padding: 12px;
-    margin: 5px
+    padding: 1em;
+    margin: 1em;
+}
+
+.thumbnail {
+    padding: 1em;
+    float: left;
+    max-width: 14em;
+    max-height: 14em;
+    height: auto;
+    width: auto;
+}
+
+.github-link {
+    float: right;
+    padding-right: 2em;
+    width: 5em;
+    height: 5em;
 }
