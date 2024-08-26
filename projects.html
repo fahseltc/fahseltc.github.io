@@ -6,15 +6,15 @@ permalink: projects.html
 ---
 {% for project in collections.project %}
 <div class="project-box">
-	<img style="padding: 20px; float: left;" src="{{ project.data.image }}" />
-	<div style="float: right;">
+	<img class="thumbnail" src="{{ project.data.image }}" />
+	<div class="project-box-text">
 		<h3>{{ project.data.title }}</h3>
 		<p>{{ project.data.description }}</p>
 		{% if project.data.has_article %}
 			<a href="/projects/{{ project.data.title | slug }}">Read More</a>
 		{% endif %}
 		{% if project.data.repo %}
-			<a style="float: right; padding-right: 2em;" href="{{ project.data.repo }}"><img src="img/github/logo.png" width="50" height="50"/></a>
+			<a class="github-link" href="{{ project.data.repo }}"><img src="img/github/logo.png"/></a>
 		{% endif %}
 	</div>
 </div>
