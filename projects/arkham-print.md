@@ -3,11 +3,11 @@ layout: base.html
 
 title: ArkhamPrint.xyz
 subtitle: PDF generator to print cards at home
-description: "<b>ArkhamPrint.xyz</b> is a small project to help players of an LCG game to print out cards at home. It was inspired by a similar project that since went defunct.
+description: "<b>ArkhamPrint.xyz</b> is a small project to help players of an LCG game to print out cards at home. It was inspired by a similar project that since went defunct."
 tags: project
-image: /img/arkham-print/icon.png
+image: img/arkham-print/icon.png
 repo: https://github.com/fahseltc/arkhamprint.xyz
-date: 2025-3-19
+date: 2025-03-19
 has_article: true
 ---
 ![image](/img/arkham-print/pdf.png)
