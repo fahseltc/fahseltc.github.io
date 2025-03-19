@@ -1,7 +1,7 @@
 ---
 layout: base.html
 
-title: ArkhamPrint.xyz
+title: Arkham Print
 subtitle: PDF generator to print cards at home
 description: "<b>ArkhamPrint.xyz</b> is a small project to help players of an LCG game to print out cards at home. It was inspired by a similar project that since went defunct."
 tags: project
