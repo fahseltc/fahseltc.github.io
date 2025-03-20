@@ -1,6 +1,6 @@
 # Personal webpage project
 https://fahseltc.github.io/
-
+https://charlesfahselt.com
 Uses:
 https://www.11ty.dev/
 
