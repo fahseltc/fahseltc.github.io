@@ -2,31 +2,42 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="icon" type="image/png" sizes="96x96" href="/img/cf-icon.png">
-	<title>Charles Fahselt</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/cf-icon.png">
+  <title>Charles Fahselt</title>
 </head>
 
-<body id="top">
-	<header>
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="https://www.linkedin.com/in/fahseltc/">LinkedIn</a></li>
-				<li><a href="https://github.com/fahseltc/">GitHub</a></li>
-			</ul>
-		</nav>
-		<h1>{{ title | default: "Charles Fahselt" }}</h1>
-		<p>{{ subtitle | default: "Professional Software Engineer & Hobby Game Developer" }}</p>
-	</header>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8C95006PHW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-	<main>
-		{{ content }}
-	</main>
+  gtag('config', 'G-8C95006PHW');
+</script>
+
+
+<body id="top">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="https://www.linkedin.com/in/fahseltc/">LinkedIn</a></li>
+        <li><a href="https://github.com/fahseltc/">GitHub</a></li>
+      </ul>
+    </nav>
+    <h1>{{ title | default: "Charles Fahselt" }}</h1>
+    <p>{{ subtitle | default: "Professional Software Engineer & Hobby Game Developer" }}</p>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
 </body>
 
 </html>
