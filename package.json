@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx eleventy",
     "clean": "rd /s /q _site",
     "serve": "npx @11ty/eleventy --serve"
   },
