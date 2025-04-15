@@ -14,7 +14,7 @@ permalink: projects.html
 			<a href="/projects/{{ project.data.title | slug }}">Read More</a>
 		{% endif %}
 		{% if project.data.external_link %}
-			<a href="{{ project.data.external_link | slug }}">External Link</a>
+			<a href="{{ project.data.external_link}}">External Link</a>
 		{% endif %}
 		{% if project.data.repo %}
 			<a class="github-link" href="{{ project.data.repo }}"><img src="img/github/logo.png"/></a>
