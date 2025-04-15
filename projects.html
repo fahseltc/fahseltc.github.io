@@ -4,7 +4,7 @@ title: Projects
 subtitle: A collection of projects I have worked on
 permalink: projects.html
 ---
-{% for project in collections.project %}
+{% for project in collections.project reversed  %}
 <div class="project-box">
 	<img class="thumbnail" src="{{ project.data.image }}" />
 	<div class="project-box-text">
@@ -12,6 +12,9 @@ permalink: projects.html
 		<p>{{ project.data.description }}</p>
 		{% if project.data.has_article %}
 			<a href="/projects/{{ project.data.title | slug }}">Read More</a>
+		{% endif %}
+		{% if project.data.external_link %}
+			<a href="{{ project.data.external_link | slug }}">External Link</a>
 		{% endif %}
 		{% if project.data.repo %}
 			<a class="github-link" href="{{ project.data.repo }}"><img src="img/github/logo.png"/></a>
