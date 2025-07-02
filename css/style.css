@@ -1,9 +1,25 @@
 .project-box {
     display: flex;
+    flex-direction: column;
     border: 1px solid;
     border-radius: 5px;
     padding: 1em;
     margin: 1em;
+}
+
+/* On wider screens, display content side-by-side */
+@media (min-width: 600px) {
+    .project-box {
+        flex-direction: row;
+    }
+}
+
+.project-box-text {
+    flex: 1; /* takes remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
 }
 
 .thumbnail {
@@ -12,10 +28,11 @@
     max-height: 14em;
     height: auto;
     width: auto;
+    margin: auto;
 }
 
 .github-link {
-    float: right;
+    align-self: flex-end;
     padding-right: 2em;
     width: 5em;
     height: 5em;
