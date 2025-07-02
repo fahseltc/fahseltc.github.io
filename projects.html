@@ -6,19 +6,32 @@ permalink: projects.html
 ---
 {% for project in collections.project reversed  %}
 <div class="project-box">
-	<img class="thumbnail" src="{{ project.data.image }}" />
-	<div class="project-box-text">
+	{% if project.data.has_article %}
+		<a href="/projects/{{ project.data.title | slug }}"><img class="thumbnail" src="{{ project.data.image }}" /></a>
+		<div class="project-box-text">
+
 		<h3>{{ project.data.title }}</h3>
 		<p>{{ project.data.description }}</p>
-		{% if project.data.has_article %}
-			<a href="/projects/{{ project.data.title | slug }}">Read More</a>
-		{% endif %}
+		<a href="/projects/{{ project.data.title | slug }}">Read More</a>
 		{% if project.data.external_link %}
 			<a href="{{ project.data.external_link}}">External Link</a>
 		{% endif %}
 		{% if project.data.repo %}
 			<a class="github-link" href="{{ project.data.repo }}"><img src="img/github/logo.png"/></a>
 		{% endif %}
+		</div>
+	{% else %}
+		<img class="thumbnail" src="{{ project.data.image }}" />
+		<div class="project-box-text">
+		<h3>{{ project.data.title }}</h3>
+		<p>{{ project.data.description }}</p>
+		{% if project.data.external_link %}
+			<a href="{{ project.data.external_link}}">External Link</a>
+		{% endif %}
+		{% if project.data.repo %}
+			<a class="github-link" href="{{ project.data.repo }}"><img src="img/github/logo.png"/></a>
+		{% endif %}
+	{% endif %}
 	</div>
 </div>
 {% endfor %}
