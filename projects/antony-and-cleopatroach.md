@@ -118,10 +118,10 @@ This was a very small game jam with only 14 participants, so I will probably hav
 # Highlights / player reactions
 
 As of writing (7/2/2025) the game jam voting is not yet complete, but I do have some pretty positive feedback from friends and fellow developers.
-![positive feedback](/img/antony-and-cleopatroach/feedback1.png)
-![positive feedback](/img/antony-and-cleopatroach/feedback2.png)
-![positive feedback](/img/antony-and-cleopatroach/feedback3.png)
-![positive feedback](/img/antony-and-cleopatroach/feedback4.png)
+![positive feedback](/img/antony-and-cleopatroach/feedback1.PNG)
+![positive feedback](/img/antony-and-cleopatroach/feedback2.PNG)
+![positive feedback](/img/antony-and-cleopatroach/feedback3.PNG)
+![positive feedback](/img/antony-and-cleopatroach/feedback4.PNG)
 
 # Closing Thoughts
 
