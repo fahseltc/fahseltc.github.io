@@ -13,7 +13,7 @@ has_article: true
 
 ![image](/img/antony-and-cleopatroach/in-game.png)
 
-[You can play it here!](https://digdugdiggy.itch.io/antony-and-cleopatroach)
+[You can play it here!](https://digdugdiggy.itch.io/antony-and-cleopatroach) (Not mobile friendly!)
 
 # Project Overview
 
