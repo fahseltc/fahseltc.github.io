@@ -3,7 +3,7 @@ layout: base.html
 
 title: ANTony and CleopatROACH
 subtitle: A small RTS game written in Golang based on Shakespears
-description: "<b>ANTony and CleopatROACH</b> is a small RTS game based on Shakespeare, developed in Golang for a 2 week game jam"
+description: "<b>ANTony and CleopatROACH</b> is a small Realtime-Strategy game based on a Shakespearean tragedy, developed in Golang for a 2 week game jam where it placed 3rd"
 tags: project
 image: img/antony-and-cleopatroach/icon.png
 repo: https://github.com/fahseltc/ANTony-and-CleopatROACH
@@ -11,7 +11,7 @@ date: 2025-06-29
 has_article: true
 ---
 
-![image](/img/antony-and-cleopatroach/in-game.png)
+![in-game screenshot](/img/antony-and-cleopatroach/in-game.png)
 
 [You can play it here!](https://digdugdiggy.itch.io/antony-and-cleopatroach) (Not mobile friendly!)
 
@@ -21,7 +21,10 @@ The game is a Realtime Strategy game (similar to Starcraft) where you direct Ant
 It was developed for the [Ebitengine 2025 Game Jam](https://itch.io/jam/ebitengine-game-jam-2025) over two weeks from June 15th to June 29th. The theme for the game jame was "Union", so I wanted to go with a type of love story.
 Most of the art and writing was done with ChatGPT.
 
-You can see more screenshots of the game in-development here: https://github.com/fahseltc/ANTony-and-CleopatROACH/tree/master/dev-screenshots
+**My game won 3rd place overall in the game jam out of 14 participants.**
+![Game jam results](/img/antony-and-cleopatroach/jam-results.png)
+
+You can see more screenshots of the game in-development progress [on my github](https://github.com/fahseltc/ANTony-and-CleopatROACH/tree/master/dev-screenshots)
 
 ## Goals
 
