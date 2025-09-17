@@ -2,7 +2,7 @@
 layout: base.html
 
 title: ANTony and CleopatROACH
-subtitle: A small RTS game written in Golang based on Shakespears
+subtitle: A small RTS game written in Golang based on Shakespeare
 description: "<b>ANTony and CleopatROACH</b> is a small Realtime-Strategy game based on a Shakespearean tragedy, developed in Golang for a 2 week game jam where it placed 3rd"
 tags: project
 image: img/antony-and-cleopatroach/icon.png
